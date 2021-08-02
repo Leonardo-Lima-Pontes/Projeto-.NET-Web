@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace LeonardoLimaPontes.Controllers
 {
-    public class CategoriaController : Controller
+    public class TipoAplicacaoController : Controller
     {
         private readonly ApplicationDbContext _db;
 
-        public CategoriaController(ApplicationDbContext db)
+        public TipoAplicacaoController(ApplicationDbContext db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Categoria> objList = _db.Categoria;
+            IEnumerable<TipoAplicacao> objList = _db.TipoAplicacao;
             return View(objList);
         }
 
@@ -32,18 +32,11 @@ namespace LeonardoLimaPontes.Controllers
         //POST - CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Categoria obj)
+        public IActionResult Create(TipoAplicacao obj)
         {
-            if (ModelState.IsValid)
-            {
-                _db.Categoria.Add(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(obj);
-            }
+            _db.TipoAplicacao.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -15,5 +15,6 @@ namespace LeonardoLimaPontes.Data
         }
 
         public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<TipoAplicacao> TipoAplicacao { get; set; }
     }
 }
