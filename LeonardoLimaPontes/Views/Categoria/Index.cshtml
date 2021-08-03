@@ -7,7 +7,7 @@
         </div>
         <div class="col-6 text-right">
             <a asp-controller="Categoria" asp-action="Create" class="btn btn-primary">
-                Criar Nova Categoria
+                <i class="fas fa-plus-square"></i> &nbsp; Criar Nova Categoria
             </a>
         </div>
     </div>
@@ -37,10 +37,10 @@
                         <td>
                             <div class="w-75 btn-group" role="group">
                                 <a asp-controller="Categoria" asp-route-Id="@obj.Id" asp-action="Editar" class="btn btn-primary mx-2">
-                                    Editar
+                                    <i class="fas fa-edit"></i>
                                 </a>
                                 <a asp-controller="Categoria" asp-route-Id="@obj.Id" asp-action="Deletar" class="btn btn-danger">
-                                    Deletar 
+                                    <i class="fas fa-trash"></i> 
                                 </a>
                             </div> 
                         </td>
